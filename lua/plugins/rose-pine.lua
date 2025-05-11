@@ -1,5 +1,5 @@
 return {
-    "rose-pine/neovim"
+    "rose-pine/neovim",
 }
 
 

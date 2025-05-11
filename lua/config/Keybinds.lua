@@ -4,5 +4,6 @@ vim.keymap.set("n", "<leader><S-q>", "<cmd>q!<cr>")
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<cr>")
 vim.keymap.set("n", "<leader><S-w>", "<cmd>w!<cr>")
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", "<cmd>move -2<CR>", { noremap = true })
+vim.keymap.set("n", "<A-j>", "<cmd>move +1<CR>", { noremap = true })
