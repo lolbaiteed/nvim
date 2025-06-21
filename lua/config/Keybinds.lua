@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>fd", "<cmd>Ex<cr>", { desc = "Open file tree", noremap = true })
+vim.keymap.set("n", "<leader>fd", "<cmd>Oil<cr>", { desc = "Open file tree", noremap = true })
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write a file", noremap = true })
 vim.keymap.set("n", "<leader><S-w>", "<cmd>w!<cr>", { desc = "Force write", noremap = true })
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Smart rename" })
