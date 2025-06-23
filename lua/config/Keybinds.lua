@@ -8,6 +8,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "The best keymap in universe
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition", noremap = true })
 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Code action", noremap = true })
 vim.keymap.set("n", "<leader>td", "<cmd>Td<cr>", { desc = "Open TODO list", noremap = true })
+vim.keymap.set("n", "<leader>zv", function() vim.lsp.buf.hover() end, { desc = "Hover", noremap = true })
 
 --- Telescope ---
 local builtin = require('telescope.builtin')
