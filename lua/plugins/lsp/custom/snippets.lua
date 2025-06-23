@@ -1,6 +1,6 @@
 local ls = require "luasnip"
 
--- TODO: Think about `locally_jumpable`, etc.
+-- @todo: Think about `locally_jumpable`, etc.
 -- Might be nice to send PR to luasnip to use filters instead for these functions ;)
 
 vim.snippet.expand = ls.lsp_expand

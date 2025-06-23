@@ -95,7 +95,7 @@ cmp.setup {
     },
   },
   window = {
-    -- TODO: I don't like this at all for completion window, it takes up way too much space.
+    --  @todo: I don't like this at all for completion window, it takes up way too much space.
     --  However, I think the docs one could be OK, but I need to fix the highlights for it
     --
     -- completion = cmp.config.window.bordered(),
