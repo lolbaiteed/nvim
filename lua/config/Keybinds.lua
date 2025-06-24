@@ -10,9 +10,13 @@ vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { de
 vim.keymap.set("n", "<leader>td", "<cmd>Td<cr>", { desc = "Open TODO list", noremap = true })
 
 --- Folders ---
-vim.keymap.set("n", "zv", function() vim.lsp.buf.hover() end, { desc = "Hover", noremap = true })
-vim.keymap.set("n", "zc", "<cmd>normal! zM<cr>", { desc = "Close all", noremap = true})
-vim.keymap.set("n", "ze", "<cmd>normal! zR<cr>", { desc = "Expand all", noremap = true})
+local ufo = require("ufo")
+vim.keymap.set("n", "zv", function() ufo.peekFoldedLinesUnderCursor()
+    if not winid then
+        vim.lsp.buf.hover()
+    end end, { desc = "Peek folded lines", noremap = true })
+vim.keymap.set("n", "zc", ufo.closeAllFolds, { desc = "Close all folds", noremap = true })
+vim.keymap.set("n", "ze", ufo.openAllFolds, { desc = "Open all folds", noremap = true })
 
 
 --- Telescope ---
