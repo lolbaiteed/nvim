@@ -20,6 +20,7 @@ vim.opt.expandtab=true
 vim.opt.tabstop=4
 vim.opt.shiftwidth=4
 vim.opt.termguicolors=true
+
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
@@ -30,11 +31,11 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     -- import your plugins
-    {{import = "plugins"},  {import = "plugins.lsp"}}
+    {{ import = "plugins" },{import = "plugins.lsp"}},
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = false },
+  checker = { enabled = true },
 })

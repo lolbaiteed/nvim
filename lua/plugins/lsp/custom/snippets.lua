@@ -1,5 +1,10 @@
 local ls = require "luasnip"
 
+
+require("luasnip.loaders.from_vscode").load {
+    exclude = { "javascript" },
+}
+
 -- @todo: Think about `locally_jumpable`, etc.
 -- Might be nice to send PR to luasnip to use filters instead for these functions ;)
 
