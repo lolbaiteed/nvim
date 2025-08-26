@@ -1,3 +1,4 @@
 require("config.opts")
-require("config.keybinds")
 require("plugins.manager")
+require("config.keybinds")
+
