@@ -1,0 +1,9 @@
+vim.o.ignorecase=true
+vim.o.relativenumber=true
+vim.o.expandtab=true
+vim.o.tabstop=4
+vim.o.shiftwidth=4
+vim.o.termguicolors=true
+vim.o.colorcolumn = '90'
+vim.o.swapfile = false
+vim.o.winborder = "rounded"
