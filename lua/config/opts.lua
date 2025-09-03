@@ -7,3 +7,4 @@ vim.o.termguicolors=true
 vim.o.colorcolumn = '90'
 vim.o.swapfile = false
 vim.o.winborder = "rounded"
+vim.o.clipboard = "unnamedplus"

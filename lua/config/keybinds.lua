@@ -9,6 +9,9 @@ vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go 
 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Code action", noremap = true })
 vim.keymap.set("n", "<leader>td", "<cmd>Td<cr>", { desc = "Open TODO list", noremap = true })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree", noremap = true })
+vim.keymap.set({ "n", "v", "x"}, "<leader>y", '"+y<CR>')
+vim.keymap.set({ "n", "v", "x"}, "<leader>d", '"+d<CR>')
+
 
 --- Folders ---
 local ufo = require("ufo")

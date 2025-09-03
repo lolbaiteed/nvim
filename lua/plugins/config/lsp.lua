@@ -1,3 +1,4 @@
+require("mason").setup()
 vim.lsp.config('*', {
   on_attach = function(client, bufnr)
     print("LSP attached to", vim.api.nvim_buf_get_name(bufnr))
@@ -28,7 +29,7 @@ vim.lsp.config("lua_ls", {
     }
 })
 
-vim.lsp.enable({ 'clangd', 'ts_ls', 'lua_ls', 'gopls' })
+vim.lsp.enable({ 'clangd', 'ts_ls', 'lua_ls', 'gopls', 'tinymist' })
 
 vim.diagnostic.config({
 	    -- update_in_insert = true,
