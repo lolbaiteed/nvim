@@ -1,2 +1,2 @@
-require("config.lazy")
-require("config.Keybinds")
+require "config.lazy"
+require "config.keybinds"
