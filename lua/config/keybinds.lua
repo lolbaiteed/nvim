@@ -2,23 +2,26 @@ vim.keymap.set("n", "<leader>fd", "<cmd>Oil<cr>", { desc = "Open file tree", nor
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Write a file", noremap = true })
 vim.keymap.set("n", "<leader><S-w>", "<cmd>w!<cr>", { desc = "Force write", noremap = true })
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Smart rename" })
-vim.keymap.set("n", "<C-k>", "<cmd>move -2<CR>", { noremap = true, desc = "Move line up" })
-vim.keymap.set("n", "<C-j>", "<cmd>move +1<CR>", { noremap = true, desc = "Move line down" })
+vim.keymap.set("n", "<A-k>", "<cmd>move -2<CR>", { noremap = true, desc = "Move line up" })
+vim.keymap.set("n", "<A-j>", "<cmd>move +1<CR>", { noremap = true, desc = "Move line down" })
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "The best keymap in universe" })
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition", noremap = true })
 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Code action", noremap = true })
 vim.keymap.set("n", "<leader>td", "<cmd>Td<cr>", { desc = "Open TODO list", noremap = true })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree", noremap = true })
-vim.keymap.set({ "n", "v", "x"}, "<leader>y", '"+y<CR>')
-vim.keymap.set({ "n", "v", "x"}, "<leader>d", '"+d<CR>')
+vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y<CR>')
+vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"+d<CR>')
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 
 --- Folders ---
 local ufo = require("ufo")
-vim.keymap.set("n", "zv", function() ufo.peekFoldedLinesUnderCursor()
+vim.keymap.set("n", "zv", function()
+    ufo.peekFoldedLinesUnderCursor()
     if not winid then
         vim.lsp.buf.hover()
-    end end, { desc = "Peek folded lines", noremap = true })
+    end
+end, { desc = "Peek folded lines", noremap = true })
 vim.keymap.set("n", "zc", ufo.closeAllFolds, { desc = "Close all folds", noremap = true })
 vim.keymap.set("n", "ze", ufo.openAllFolds, { desc = "Open all folds", noremap = true })
 
