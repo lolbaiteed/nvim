@@ -49,10 +49,11 @@ return {
       'lua_ls',
       'gopls',
       'tinymist',
-      'html-lsp',
-      'css-lsp',
+      'html',
+      'cssls',
       'zls',
-      'basedpyright'
+      'basedpyright',
+      'rust_analyzer'
     })
 
     vim.diagnostic.config({

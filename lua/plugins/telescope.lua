@@ -22,6 +22,11 @@ return {
                     sorting_strategy = 'ascending',
                     previewer = false,
                 },
+                man_pages = {
+                  sections = {
+                    "2", "3",
+                  },
+                },
             },
         })
       end

@@ -7,20 +7,22 @@ vim.keymap.set("n", "<A-j>", "<cmd>move +1<CR>", { noremap = true, desc = "Move 
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "The best keymap in universe" })
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition", noremap = true })
 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Code action", noremap = true })
-vim.keymap.set("n", "<leader>td", "<cmd>Td<cr>", { desc = "Open TODO list", noremap = true })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree", noremap = true })
 vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y<CR>')
 vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"+d<CR>')
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+
 
 
 --- Folders ---
 local ufo = require("ufo")
 vim.keymap.set("n", "zv", function()
-    ufo.peekFoldedLinesUnderCursor()
-    if not winid then
-        vim.lsp.buf.hover()
-    end
+  ufo.peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
 end, { desc = "Peek folded lines", noremap = true })
 vim.keymap.set("n", "zc", ufo.closeAllFolds, { desc = "Close all folds", noremap = true })
 vim.keymap.set("n", "ze", ufo.openAllFolds, { desc = "Open all folds", noremap = true })
@@ -31,3 +33,4 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files', noremap = true })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep', noremap = true })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags', noremap = true })
+vim.keymap.set('n', '<leader>mn', builtin.man_pages, { desc = 'Telescope man pages', noremap = true })
