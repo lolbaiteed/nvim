@@ -3,6 +3,7 @@ return{
     config = function ()
         require'nvim-treesitter.configs'.setup {
             ensure_installed = { "c", "zig", "javascript", "vim", "vimdoc", "lua" },
+            ignore_install = {},
             sync_install = false,
             auto_install = false,
             highlight = {

@@ -17,7 +17,7 @@ return {
                     layout_config = {
                         prompt_position = 'top',
                         height = 0.5,
-                        width = 0.2,
+                        width = 0.3,
                     },
                     sorting_strategy = 'ascending',
                     previewer = false,

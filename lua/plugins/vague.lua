@@ -9,6 +9,10 @@ return {
           italic = true,
       })
     vim.cmd("colorscheme vague")
+    vim.api.nvim_set_hl(0, "LspInlayHint", {
+      fg = "#b5b5b5",
+      bg = "#242424",
+    })
   end
 }
 
