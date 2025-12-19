@@ -5,12 +5,6 @@ return {
   version = '1.*',
 
   opts = {
-    snippets = {
-      preset = 'luasnip',
-    },
-    sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer'},
-    },
     signature = { enabled = true },
     keymap = {
       preset = 'default',

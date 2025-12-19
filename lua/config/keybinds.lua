@@ -6,6 +6,7 @@ vim.keymap.set("n", "<A-k>", "<cmd>move -2<CR>", { noremap = true, desc = "Move 
 vim.keymap.set("n", "<A-j>", "<cmd>move +1<CR>", { noremap = true, desc = "Move line down" })
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "The best keymap in universe" })
 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition", noremap = true })
+vim.keymap.set("n", "gi", function () vim.lsp.buf.implementation({reuse_win = true}) end, {desc = "Go to implementation", noremap = true})
 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Code action", noremap = true })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "UndoTree", noremap = true })
 vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y<CR>')
