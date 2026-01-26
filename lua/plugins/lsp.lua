@@ -28,7 +28,16 @@ return {
           },
           telemetry = {
             enable = false,
-          }
+          },
+          hint = {
+            enable = true,
+            paramName = "All",
+            paramType = true,
+            variableType = true,
+            setType = true,
+            arrayIndex = true,
+            semicolon = "All",
+          },
         }
       }
     })
@@ -50,10 +59,10 @@ return {
         preferences = {
           includeInlayParameterNameHints = "all",      -- "none" | "literals" | "all"
           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = true,
+          includeInlayFunctionParameterTypeHints = false,
+          includeInlayVariableTypeHints = false,
           includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayPropertyDeclarationTypeHints = false,
           includeInlayFunctionLikeReturnTypeHints = true,
           includeInlayEnumMemberValueHints = true,
         },
@@ -65,13 +74,13 @@ return {
       'lua_ls',
       'ts_ls',
       'gopls',
-      'tinymist',
       'html',
       'cssls',
       'zls',
       'basedpyright',
       'rust_analyzer',
-      'prismals'
+      'prismals',
+      'yamlls'
     })
 
     vim.diagnostic.config({
