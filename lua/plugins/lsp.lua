@@ -80,7 +80,8 @@ return {
       'basedpyright',
       'rust_analyzer',
       'prismals',
-      'yamlls'
+      'yamlls',
+      'dockerls'
     })
 
     vim.diagnostic.config({

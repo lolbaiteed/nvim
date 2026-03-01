@@ -35,3 +35,22 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep', noremap = true })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags', noremap = true })
 vim.keymap.set('n', '<leader>mn', builtin.man_pages, { desc = 'Telescope man pages', noremap = true })
+
+local function toggle_todo_quickfix()
+  -- Check if quickfix window is open
+  local qf_open = false
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      qf_open = true
+      break
+    end
+  end
+
+  if qf_open then
+    vim.cmd("cclose")
+  else
+    vim.cmd("TodoQuickFix")
+  end
+end
+
+vim.keymap.set("n", "<leader>td", toggle_todo_quickfix, { desc = "Toggle TODO quickfix" })
