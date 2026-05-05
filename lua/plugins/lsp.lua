@@ -41,7 +41,6 @@ return {
         }
       }
     })
-
     vim.lsp.config("zls", {
       settings = {
         zls = {
@@ -54,34 +53,51 @@ return {
     vim.g.zig_fmt_parse_errors = 0
     vim.g.zig_fmt_autosave = 0
 
-    vim.lsp.config('ts_ls', {
-      init_options = {
-        preferences = {
-          includeInlayParameterNameHints = "all",      -- "none" | "literals" | "all"
-          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-          includeInlayFunctionParameterTypeHints = false,
-          includeInlayVariableTypeHints = false,
-          includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-          includeInlayPropertyDeclarationTypeHints = false,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
+    vim.api.nvim_set_hl(0, "LspReferenceText", { underline = true })
+    vim.api.nvim_set_hl(0, "LspReferenceRead", { underline = true })
+    vim.api.nvim_set_hl(0, "LspReferenceWrite", { underline = true })
+
+    local vue_language_server_path = vim.fn.stdpath('data') ..
+    '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+    local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+    local vue_plugin = {
+      name = '@vue/typescript-plugin',
+      location = vue_language_server_path,
+      languages = { 'vue' },
+      configNamespace = 'typescript',
+    }
+    local vtsls_config = {
+      settings = {
+        vtsls = {
+          tsserver = {
+            globalPlugins = {
+              vue_plugin,
+            },
+          },
         },
       },
-    })
+      filetypes = tsserver_filetypes,
+    }
+
+    local ts_ls_config = {
+      init_options = {
+        plugins = {
+          vue_plugin,
+        },
+      },
+      filetypes = tsserver_filetypes,
+    }
+
+    vim.lsp.config('ts_ls', ts_ls_config)
 
     vim.lsp.enable({
-      'clangd',
       'lua_ls',
-      'ts_ls',
       'gopls',
       'html',
       'cssls',
-      'zls',
-      'basedpyright',
-      'rust_analyzer',
-      'prismals',
-      'yamlls',
-      'dockerls'
+      'dockerls',
+      'ts_ls',
+      'vue_ls'
     })
 
     vim.diagnostic.config({
