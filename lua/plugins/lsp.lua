@@ -97,7 +97,8 @@ return {
       'cssls',
       'dockerls',
       'ts_ls',
-      'vue_ls'
+      'vue_ls',
+      'tailwindcss'
     })
 
     vim.diagnostic.config({
