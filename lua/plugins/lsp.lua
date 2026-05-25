@@ -98,7 +98,9 @@ return {
       'dockerls',
       'ts_ls',
       'vue_ls',
-      'tailwindcss'
+      'tailwindcss',
+      'laravel_ls',
+      'intelephense'
     })
 
     vim.diagnostic.config({
