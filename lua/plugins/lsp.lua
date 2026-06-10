@@ -66,7 +66,7 @@ return {
       languages = { 'vue' },
       configNamespace = 'typescript',
     }
-    local vtsls_config = {
+    vim.lsp.config('vtsls', {
       settings = {
         vtsls = {
           tsserver = {
@@ -77,18 +77,9 @@ return {
         },
       },
       filetypes = tsserver_filetypes,
-    }
+    })
 
-    local ts_ls_config = {
-      init_options = {
-        plugins = {
-          vue_plugin,
-        },
-      },
-      filetypes = tsserver_filetypes,
-    }
-
-    vim.lsp.config('ts_ls', ts_ls_config)
+    vim.lsp.config("vue_ls", {})
 
     vim.lsp.enable({
       'lua_ls',
@@ -100,7 +91,8 @@ return {
       'vue_ls',
       'tailwindcss',
       'laravel_ls',
-      'intelephense'
+      'intelephense',
+      'vtsls'
     })
 
     vim.diagnostic.config({

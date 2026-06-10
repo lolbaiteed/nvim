@@ -5,6 +5,7 @@ vim.o.tabstop=2
 vim.o.shiftwidth=2
 vim.o.termguicolors=true
 vim.o.winborder="rounded"
+vim.o.colorcolumn = "80"
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
